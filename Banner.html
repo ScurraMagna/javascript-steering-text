@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+</header>
+
+<body>
+
+</body>
+<script src="Vector2D.js"></script>
+<script src="Vehicle.js"></script>
+<script src="TextBanner.js"></script>
+<script type="text/javascript">
+
+let width, height;
+window.addEventListener('load', () => {
+  canvas = document.createElement('canvas');
+  document.body.appendChild(canvas);
+  ctx = canvas.getContext('2d');
+  resize();
+
+  let banner = new TextBanner (canvas);
+  banner.setBackground(0, 0, 0);
+  banner.setText("Hello World!");
+  banner.setFont("sans-serif", 120);
+  banner.setScale(2);
+  banner.mouseMove();
+  banner.run();
+});
+
+//window.addEventListener('resize', () => { resize(); });
+var resize = () => {
+	width = canvas.width = window.innerWidth;
+	height = canvas.height = 280;
+};
+</script>
+
+</html>
